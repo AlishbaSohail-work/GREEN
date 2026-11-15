@@ -1,5 +1,9 @@
 # GREEN – prototype concept (AI-assisted draft)
 
+## 🎥 Project Video
+
+<video src="GREEN_Project_Video.mp4" controls width="100%"></video>
+
 **Intended to be live:** weather, rainfall and soil wetness are designed to come live from the public **NASA POWER API** (no key).Live check on a real host is still pending. Profiles, farms and bookings are designed to be stored in Supabase when keys are added. Row-level security is included in supabase.sql, but has not been tested on a live project.
 **What is NOT real yet:** mandi prices ("est." tag until you add rows to `mandi_prices`), providers (samples until you add rows to `providers`), per-crop costs and yields (estimates, farmers can edit), and SMAP/GPM/MODIS/GRACE (not connected). NASA POWER is a ~50 km grid: regional, not field-level.
 Note: Live NASA test is still pending.
