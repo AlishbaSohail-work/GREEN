@@ -1,11 +1,11 @@
 # GREEN – prototype concept (AI-assisted draft)
 
 **Intended to be live:** weather, rainfall and soil wetness are designed to come live from the public **NASA POWER API** (no key).Live check on a real host is still pending. Profiles, farms and bookings are designed to be stored in Supabase when keys are added. Row-level security is included in supabase.sql, but has not been tested on a live project.
-**What is NOT real yet (be honest about it):** mandi prices ("est." tag until you add rows to `mandi_prices`), providers (samples until you add rows to `providers`), per-crop costs and yields (estimates, farmers can edit), and SMAP/GPM/MODIS/GRACE (not connected). NASA POWER is a ~50 km grid: regional, not field-level.
-I could not reach NASA from my test environment; the NASA code was tested against a mock of the documented response format. **Your first test on a real host is the real test.**
+**What is NOT real yet:** mandi prices ("est." tag until you add rows to `mandi_prices`), providers (samples until you add rows to `providers`), per-crop costs and yields (estimates, farmers can edit), and SMAP/GPM/MODIS/GRACE (not connected). NASA POWER is a ~50 km grid: regional, not field-level.
+Note: Live NASA test is still pending.
 
 ## 1. Try it locally
-`python3 -m http.server 8000` in this folder, open http://localhost:8000 . Sign up (button "Fill sample data" is fine), choose a crop, Next. The advice card should show "NASA POWER · data to <date>". If you see "Could not read NASA data", check internet/ad-blocker and press Retry.
+`python3 -m http.server 8000` in this folder, open http://localhost:8000 . Sign up (use "Fill sample data" button), choose a crop, Next. The advice card should show "NASA POWER · data to <date>". If you see "Could not read NASA data", check internet/ad-blocker and press Retry.
 
 ## 2. Database (Supabase, free tier)
 1. supabase.com > New project. 2. SQL Editor > paste `supabase.sql` > Run. 3. Authentication > Sign In / Providers > enable **Anonymous sign-ins**. 4. Project Settings > API > copy URL and anon key into `config.js`.
