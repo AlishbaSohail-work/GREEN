@@ -1,6 +1,6 @@
-# GREEN – real-data version
+# GREEN – prototype concept (AI-assisted draft)
 
-**What is real now:** weather, rainfall and soil wetness come live from the public **NASA POWER API** (no key). Profiles, farms and bookings are stored in **Supabase** (when you add your keys), protected so each farmer sees only their own rows.
+**Intended to be live:** weather, rainfall and soil wetness are designed to come live from the public **NASA POWER API** (no key).Live check on a real host is still pending. Profiles, farms and bookings are designed to be stored in Supabase when keys are added. Row-level security is included in supabase.sql, but has not been tested on a live project.
 **What is NOT real yet (be honest about it):** mandi prices ("est." tag until you add rows to `mandi_prices`), providers (samples until you add rows to `providers`), per-crop costs and yields (estimates, farmers can edit), and SMAP/GPM/MODIS/GRACE (not connected). NASA POWER is a ~50 km grid: regional, not field-level.
 I could not reach NASA from my test environment; the NASA code was tested against a mock of the documented response format. **Your first test on a real host is the real test.**
 
@@ -32,10 +32,12 @@ Guide lines are in `const GL` in `index.html`; edit them to change what the guid
 ## 6. What each API needs
 | Service | Status | You must |
 |---|---|---|
-| NASA POWER | live, no key | nothing |
+| NASA POWER | live check pending, no key needed | nothing |
 | Supabase (database, login) | needs keys | steps 2 above |
 | Azure Speech (voice) | optional, needs key | section 5 |
 | Mandi prices | no public API found | enter rows in `mandi_prices` or partner with AMIS/mandi committees |
 | SMS login (OTP) | not built | Supabase Auth phone provider + Twilio |
 | Digital payment (JazzCash/Easypaisa) | not built | merchant account + their API (server side) |
 | NASA SMAP/MODIS/GPM/GRACE | not built | Earthdata token on a server function |
+
+Note: This README was drafted with AI assistance and reviewed by the author within a limited time. Treat this as a prototype concept description, not as a fully verified technical specification.
